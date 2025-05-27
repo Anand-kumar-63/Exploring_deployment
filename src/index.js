@@ -3,12 +3,14 @@ const app = express();
 const port = 4000;
 const path = require("path");
 
+
+app.set(parse.json());
 app.set("view engine", "ejs");
-// app.set('src', path.join(__dirname, 'src'));
+app.set('src/views', path.join(__dirname, 'src/views'));
 
 
 app.get('/', (req, res) => {
-    res.render('index', { message: 'Hello World' });
+    res.render('index');
 });
 
 const PORT = process.env.PORT || 3000;
